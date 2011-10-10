@@ -1,0 +1,64 @@
+[main]
+    
+    # Our puppet master
+    server = <%= puppet_server %>
+    
+    # The Puppet log directory.
+    logdir = /var/log/puppet
+
+    # Where Puppet PID files are kept.
+    rundir = /var/run/puppet
+
+    # Where SSL certificates are kept.
+    ssldir = /var/lib/puppet/ssl
+    
+    # Run plugin sync to download custom types, functions and facts
+    pluginsync = <%= puppet_pluginsync %>
+    
+    factpath=$vardir/lib/facter    
+    
+    templatedir=$confdir/templates
+    prerun_command=/etc/puppet/etckeeper-commit-pre
+    postrun_command=/etc/puppet/etckeeper-commit-post
+
+[agent]
+    # The file in which puppetd stores a list of the classes
+    # associated with the retrieved configuratiion.  Can be loaded in
+    # the separate ``puppet`` executable using the ``--loadclasses``
+    # option.
+    classfile = /var/lib/puppet/classes.txt
+
+    # Where puppetd caches the local configuration.  An
+    # extension indicating the cache format is added automatically.
+    # The default value is '$confdir/localconfig'.
+    localconfig = /var/lib/puppet/localconfig
+
+    # Enable reporting
+    report = <%= puppet_report %>
+    
+    # Environment effects which set of manifests/modules are used on the
+    # puppet master. Run puppet agent with --environment to switch an agents
+    # environment.  This basically makes that sticky remembering the last 
+    # selection.
+    environment = <%= environment %>
+    
+    
+[master]
+    reports = <%= (puppet_report_types.kind_of?(Array)) ? puppet_report_types.join(",") : puppet_report_types %>
+    reportdir = /var/lib/puppet/reports
+
+    # 1 manifest to rule them all
+    manifest = $confdir/manifests/site.pp
+
+    # modules loaded by environment    
+    modulepath = $confdir/modules/$environment
+    
+    
+[production]
+    # We hack in a bootstrap step by using "production".  Puppet uses it when no
+    # environment is specified by the agent.  In "production" we set the site
+    # manifest to a bootstrap file.  The *real* production is actually "prod".
+    
+    # TODO: Create bootstrap class that autodetects the servers environment 
+    # based on hostname when we standardise hostnames.
+    #manifest = $confdir/manifests/bootstrap.pp
