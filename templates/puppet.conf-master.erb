@@ -1,12 +1,23 @@
 [main]
-logdir=/var/log/puppet
-vardir=/var/lib/puppet
-ssldir=/var/lib/puppet/ssl
-rundir=/var/run/puppet
-factpath=$vardir/lib/facter
-templatedir=$confdir/templates
-prerun_command=/etc/puppet/etckeeper-commit-pre
-postrun_command=/etc/puppet/etckeeper-commit-post
+
+    server = <%= puppet_server %>
+    
+	logdir=/var/log/puppet
+
+	vardir=/var/lib/puppet
+	
+	ssldir=/var/lib/puppet/ssl
+	
+	rundir=/var/run/puppet
+
+	factpath=$vardir/lib/facter
+
+	templatedir=$confdir/templates
+
+	prerun_command=/etc/puppet/etckeeper-commit-pre
+	postrun_command=/etc/puppet/etckeeper-commit-post
+	
+	pluginsync = <%= puppet_pluginsync %>
 
 [master]
 # These are needed when the puppetmaster is run by passenger
@@ -14,3 +25,11 @@ postrun_command=/etc/puppet/etckeeper-commit-post
 ssl_client_header = SSL_CLIENT_S_DN
 ssl_client_verify_header = SSL_CLIENT_VERIFY
 
+    reports = <%= (puppet_report_types.kind_of?(Array)) ? puppet_report_types.join(",") : puppet_report_types %>
+    reportdir = /var/lib/puppet/reports
+
+
+[agent]
+
+report = <%= puppet_report %>
+    
