@@ -49,6 +49,6 @@ service { "puppet-dashboard-workers":
 file { "/var/lib/puppet/reports":
 	ensure => present
 	mode => 755,
-
+}
 
 }
