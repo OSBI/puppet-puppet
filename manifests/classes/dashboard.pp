@@ -38,7 +38,7 @@ file { "/usr/share/puppet-dashboard/config/database.yml":
 
 service { "puppet-dashboard":
   ensure => "running",
-  require => File["/etc/default/puppet-dashboard"],
+  require => [File["/etc/default/puppet-dashboard"], File["/usr/share/puppet-dashboard/config/database.yml"]],
 }
 
 
