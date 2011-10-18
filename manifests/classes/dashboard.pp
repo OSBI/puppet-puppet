@@ -5,13 +5,13 @@ include mysql::server
     $puppet_mysql_username      = extlookup('puppet_mysql_username'      ,'')
 	$puppet_mysql_password      = extlookup('puppet_mysql_password'      ,'')
 
-mysql::database{"dashboard_production":
+mysql::database{"puppet":
   ensure   => present,
   require => Class["mysql::server"]
 }
 
 
-mysql::rights{"dashboard database rights":
+mysql::rights{"puppet database rights":
   ensure   => present,
   database => "dashboard_production",
   user     => "${puppet_mysql_username}",
