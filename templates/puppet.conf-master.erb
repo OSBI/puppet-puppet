@@ -34,7 +34,7 @@ ssl_client_verify_header = SSL_CLIENT_VERIFY
 	dbuser = <%= puppet_mysql_username %>
 	dbpassword = <%= puppet_mysql_password %>
 	dbserver = localhost
-	dbsocket = /var/un/mysqld/mysqld.sock
+	dbsocket = /var/run/mysqld/mysqld.sock
 [agent]
 
 report = <%= puppet_report %>

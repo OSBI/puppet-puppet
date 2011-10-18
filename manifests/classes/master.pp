@@ -35,7 +35,9 @@ class puppet::master inherits puppet {
     package { 'puppetmaster':
        ensure => present,
     }
-    
+    package { "libactiverecord-ruby":
+    	ensure => present,
+    }
     #package { 'puppet-dashboard':
     #	ensure  => present,
     #}
