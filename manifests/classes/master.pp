@@ -13,6 +13,24 @@ class puppet::master inherits puppet {
     $puppetdashboard_mysql_database = extlookup('puppetdashboard_mysql_database','')
     $puppetdashboard_mysql_user     = extlookup('puppetdashboard_mysql_user','')
     $puppetdashboard_mysql_pass     = extlookup('puppetdashboard_mysql_pass','')
+
+
+    $puppet_mysql_username      = extlookup('puppet_mysql_username'      ,'')
+	$puppet_mysql_password      = extlookup('puppet_mysql_password'      ,'')
+
+	mysql::database{"dashboard_production":
+  		ensure   => present,
+  		require => Class["mysql::server"]
+	}
+
+
+	mysql::rights{"dashboard database rights":
+  		ensure   => present,
+  		database => "puppet",
+  		user     => "${puppet_mysql_username}",
+  		password => "${puppet_mysql_password}",
+  		require => Class["mysql::server"],
+	}
     
     package { 'puppetmaster':
        ensure => present,

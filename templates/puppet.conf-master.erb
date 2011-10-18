@@ -28,7 +28,13 @@ ssl_client_verify_header = SSL_CLIENT_VERIFY
     reports = <%= (puppet_report_types.kind_of?(Array)) ? puppet_report_types.join(",") : puppet_report_types %>
     reportdir = /var/lib/puppet/reports
 
-
+	storeconfigs = true
+	dbadapter = mysql
+	dbname = puppet
+	dbuser = <%= puppet_mysql_username %>
+	dbpassword = <%= puppet_mysql_password %>
+	dbserver = localhost
+	dbsocket = /var/un/mysqld/mysqld.sock
 [agent]
 
 report = <%= puppet_report %>
