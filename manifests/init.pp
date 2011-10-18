@@ -12,7 +12,7 @@ class puppet {
     $puppet_report      = extlookup('puppet_report'      ,'false')
     $puppet_noop        = extlookup('puppet_noop'        ,'false')
     $puppet_pluginsync  = extlookup('puppet_pluginsync'  ,'false')
-        
+    $puppet_report_url  = extlookup('puppet_report_url'  , 'http://puppet.analytical-labs.com:3000/reports')    
 #    include repos
 #    realize( Yumrepo['epel'], Yumrepo['epel-puppet'] )
     
