@@ -1,3 +1,6 @@
+import "classes/*.pp"
+import "definitions/*.pp"
+
 # Class: puppet
 #
 # A puppet agent module for puppet clients/agents and a base for the 
