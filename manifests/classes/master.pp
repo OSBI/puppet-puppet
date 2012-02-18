@@ -74,16 +74,16 @@ class puppet::master inherits puppet {
     }
     
     service { 'puppetmaster':
-        ensure => stopped,
-        enable => false,
-		hasstatus => true,
-    }
-    
-    service { 'apache2':
         ensure => running,
         enable => true,
 		hasstatus => true,
     }
+    
+   # service { 'apache2':
+  #      ensure => running,
+ #       enable => true,
+#		hasstatus => true,
+ #   }
     
     # Convinience wrapper to update manfiests & modules from subversion
     file { '/usr/sbin/puppetup':
