@@ -20,8 +20,6 @@
     "manifests/database/mysql.pp": "c9b24990cb5092a62b4acd45936f96fa",
     "manifests/environment.pp": "6aa586750953e33106f55f049af25abe",
     "manifests/environments.pp": "a307cfbbefde2ffb408e571070b5470f",
-    "manifests/init.pp": "ffaacb7b303b8ddcb25f30ff85d1f126",
-    "manifests/master.pp": "dd480aab71a817e44dab7383c0180530",
     "manifests/master/base.pp": "2a2c712edd8d6887ed7d6cd70b6e2331",
     "manifests/master/mongrel/standalone.pp": "20989bdef920f9268caf75085894d05a",
     "manifests/master/passenger.pp": "d269d35ff30c857cf0f2826817926e3c",
@@ -38,8 +36,7 @@
     "templates/puppet.conf-master.erb.old": "abb9fe1f2a50bff6a756d458c1bcae24",
     "templates/puppetup.cron.erb": "3fb2c1f449c5c545fab4901dd2a4a7c9",
     "templates/puppetup.erb": "14c9c2cd203a0d5f7b7d0047140f57bf",
-    "templates/vhost-passenger.conf.erb": "1615baae5589a7bdc457b8e1ef2b6a40",
-    "tests/init.pp": "d2609a7f67522ad7f71f07be8070ecaa"
+    "templates/vhost-passenger.conf.erb": "1615baae5589a7bdc457b8e1ef2b6a40"
   },
   "dependencies": [
     {
