@@ -1,0 +1,13 @@
+name 'Analytical Labs-puppet'
+version '1.0'
+
+author 'Tom Barber'
+license ''
+project_page ''
+source ''
+summary ''
+description ''
+dependency 'Analytical Labs/mysql', '==1.0'
+dependency 'Analytical Labs/common', '==1.0'
+dependency 'Analytical Labs/apache', '==1.0'
+dependency 'Analytical Labs/ruby', '==1.0'

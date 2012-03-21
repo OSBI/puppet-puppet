@@ -1,0 +1,62 @@
+{
+  "name": "Analytical Labs-puppet",
+  "author": "Tom Barber",
+  "description": "",
+  "license": "",
+  "project_page": "",
+  "source": "",
+  "summary": "",
+  "version": "1.0",
+  "checksums": {
+    "Modulefile": "4a7594df5a84979bf9ac39fa7877fce7",
+    "README": "d41d8cd98f00b204e9800998ecf8427e",
+    "ext/bootstrap-puppetmaster.sh": "6bdff075552021b7b11b1bf5bf8bb506",
+    "lib/puppet/parser/functions/all_puppet_environments.rb": "c47a8fd861bb9f78b1003e5b10845681",
+    "manifests/client/base.pp": "08f76b033c5b842f327e0f126441b6a9",
+    "manifests/client/cron.pp": "5492638485d005198be86839a359d2ee",
+    "manifests/client/daemon.pp": "1357922637a4e7b7e25b28a18c257cc7",
+    "manifests/config.pp": "ac93aa64bcc9a53a916e11fc9b666c1d",
+    "manifests/dashboard.pp": "7a956cb302571c56b2781200ad13bf8d",
+    "manifests/database/mysql.pp": "c9b24990cb5092a62b4acd45936f96fa",
+    "manifests/environment.pp": "6aa586750953e33106f55f049af25abe",
+    "manifests/environments.pp": "a307cfbbefde2ffb408e571070b5470f",
+    "manifests/init.pp": "ffaacb7b303b8ddcb25f30ff85d1f126",
+    "manifests/master.pp": "dd480aab71a817e44dab7383c0180530",
+    "manifests/master/base.pp": "2a2c712edd8d6887ed7d6cd70b6e2331",
+    "manifests/master/mongrel/standalone.pp": "20989bdef920f9268caf75085894d05a",
+    "manifests/master/passenger.pp": "d269d35ff30c857cf0f2826817926e3c",
+    "manifests/master/webrick.pp": "272fa54037a0c6365b52a11c0fdd9214",
+    "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+    "spec/spec_helper.rb": "ca19ec4f451ebc7fdb035b52eae6e909",
+    "templates/autosign.conf.erb": "8d40c170382225db90be7e08e5a4d271",
+    "templates/config.ru.erb": "1f6cb18598abf33c2471700f7c3e9c3b",
+    "templates/database.yml.erb": "4cfe4d23489a8d0bce556142f75f87e2",
+    "templates/launch-puppet.erb": "80525408a31f31b9a2bad9553dc3382d",
+    "templates/puppet-dashboard_default.erb": "db52bac3a8bdeb6d15b42567c5d00a40",
+    "templates/puppet.conf-agent.erb": "55aae7a80a1e4c763de94c218eff0acb",
+    "templates/puppet.conf-master.erb": "8d3c45ed08e040938960301b2e3ec2e5",
+    "templates/puppet.conf-master.erb.old": "abb9fe1f2a50bff6a756d458c1bcae24",
+    "templates/puppetup.cron.erb": "3fb2c1f449c5c545fab4901dd2a4a7c9",
+    "templates/puppetup.erb": "14c9c2cd203a0d5f7b7d0047140f57bf",
+    "templates/vhost-passenger.conf.erb": "1615baae5589a7bdc457b8e1ef2b6a40",
+    "tests/init.pp": "d2609a7f67522ad7f71f07be8070ecaa"
+  },
+  "dependencies": [
+    {
+      "name": "Analytical Labs/mysql",
+      "versionRequirement": "\u003d\u003d1.0"
+    },
+    {
+      "name": "Analytical Labs/common",
+      "versionRequirement": "\u003d\u003d1.0"
+    },
+    {
+      "name": "Analytical Labs/apache",
+      "versionRequirement": "\u003d\u003d1.0"
+    },
+    {
+      "name": "Analytical Labs/ruby",
+      "versionRequirement": "\u003d\u003d1.0"
+    }
+  ]
+}
