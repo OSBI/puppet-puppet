@@ -27,7 +27,7 @@ include mysql::server
 
 apt::sources_list {"camptocamp":
       ensure  => present,
-      content => 'deb http://apt.puppetlabs.com/ precise',
+      content => 'deb http://apt.puppetlabs.com/ precise main',
     }->
     package { "puppet-dashboard":
 	ensure => present,	
