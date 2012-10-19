@@ -4,7 +4,7 @@
 FLAGS="/etc/puppet/dont-run /tmp/stop-puppet /tmp/no-puppet /tmp/np"
 SERVER="<%= puppet_server %>"
 BIN="/usr/sbin/puppetd"
-ARGS="--onetime --no-daemonize --server $SERVER"
+ARGS="--onetime --no-daemonize --no-noop --server $SERVER"
 FACILITY="local1.warn"
 
 if [ $(id -u) != 0 ]; then
