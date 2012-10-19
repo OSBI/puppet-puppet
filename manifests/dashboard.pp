@@ -25,7 +25,7 @@ include mysql::server
     $puppet_mysql_username      = extlookup('puppet_mysql_username'      ,'')
 	$puppet_mysql_password      = extlookup('puppet_mysql_password'      ,'')
 
-apt::sources_list {"camptocamp":
+apt::sources_list {"puppet dashboard":
       ensure  => present,
       content => 'deb http://apt.puppetlabs.com/ precise main',
     }->
