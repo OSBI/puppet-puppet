@@ -16,7 +16,7 @@
     "manifests/client/cron.pp": "5492638485d005198be86839a359d2ee",
     "manifests/client/daemon.pp": "1357922637a4e7b7e25b28a18c257cc7",
     "manifests/config.pp": "ac93aa64bcc9a53a916e11fc9b666c1d",
-    "manifests/dashboard.pp": "7a956cb302571c56b2781200ad13bf8d",
+    "manifests/dashboard.pp": "ea8d938a0ba2ac935cb838162e2680d0",
     "manifests/database/mysql.pp": "c9b24990cb5092a62b4acd45936f96fa",
     "manifests/environment.pp": "6aa586750953e33106f55f049af25abe",
     "manifests/environments.pp": "a307cfbbefde2ffb408e571070b5470f",
@@ -41,19 +41,19 @@
   "dependencies": [
     {
       "name": "Analytical Labs/mysql",
-      "versionRequirement": "\u003d\u003d1.0"
+      "version_requirement": "\u003d\u003d1.0"
     },
     {
       "name": "Analytical Labs/common",
-      "versionRequirement": "\u003d\u003d1.0"
+      "version_requirement": "\u003d\u003d1.0"
     },
     {
       "name": "Analytical Labs/apache",
-      "versionRequirement": "\u003d\u003d1.0"
+      "version_requirement": "\u003d\u003d1.0"
     },
     {
       "name": "Analytical Labs/ruby",
-      "versionRequirement": "\u003d\u003d1.0"
+      "version_requirement": "\u003d\u003d1.0"
     }
   ]
 }

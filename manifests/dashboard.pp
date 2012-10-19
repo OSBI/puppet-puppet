@@ -25,6 +25,13 @@ include mysql::server
     $puppet_mysql_username      = extlookup('puppet_mysql_username'      ,'')
 	$puppet_mysql_password      = extlookup('puppet_mysql_password'      ,'')
 
+apt::sources_list {"camptocamp":
+      ensure  => present,
+      content => 'deb http://apt.puppetlabs.com/ precise',
+    }->
+    package { "puppet-dashboard":
+	ensure => present,	
+}
 mysql::database{"puppet":
   ensure   => present,
   require => Class["mysql::server"]
@@ -40,9 +47,7 @@ mysql::rights{"puppet database rights":
 }
 
 
-package { "puppet-dashboard":
-	ensure => present,	
-}
+
 
 file { "/etc/default/puppet-dashboard":
 	ensure => present,
