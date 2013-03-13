@@ -32,21 +32,13 @@ apt::sources_list {"puppet dashboard":
     package { "puppet-dashboard":
 	ensure => present,	
 }
-mysql::database{"puppet":
-  ensure   => present,
-  require => Class["mysql::server"]
-}
-
-
-mysql::rights{"puppet database rights":
-  ensure   => present,
-  database => "dashboard_production",
+mysql::db { 'dashboard_production':
   user     => "${puppet_mysql_username}",
   password => "${puppet_mysql_password}",
+  host     => 'localhost',
   require => Class["mysql::server"],
+
 }
-
-
 
 
 file { "/etc/default/puppet-dashboard":
